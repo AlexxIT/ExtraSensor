@@ -11,6 +11,7 @@ The number of external sensors you can connect is limited only by the capabiliti
 Currently supported:
 
 - ANT+ and BLE Heart Rate Monitor
+- ANT+ and BLE Running Speed and Distance
 
 Tested devices:
 
@@ -20,7 +21,8 @@ Tested devices:
 - Garmin HRM-Pro Plus (ANT+ and BLE)
 - Garmin HRM 600 (ANT+ and BLE)
 - COROS Hear Rate Monitor (BLE)
-- Mio Link Heart Rate wrist band (ANT+ and BLE)
+- Mio Link Heart Rate (ANT+ and BLE)
+- Stryd Power Meter (ANT+ and BLE)
 
 ## Important
 
@@ -36,7 +38,7 @@ The settings can be changed in the Garmin Connect IQ mobile app.
 
 **Type** - only ANT sensors for older devices, and both ANT and BLE for modern devices (check **Generic Bluetooth Low Energy Channel** feature [here](https://developer.garmin.com/connect-iq/compatible-devices/)).
 
-**ANT ID / BLE NUM** - leave this field blank to enable automatic sensor discovery. After the sensor is detected for the first time, this field will be filled with the sensor's ID. For ANT devices, this will be the device's ANT ID. For BLE devices, this will be an automatically generated ID starting from 1 (due to security policy restrictions); it is stored in the app's memory and does not change over time. You can enter any text in this field after the space. Supported formats:
+**ANT ID or BLE NUM** - leave this field blank to enable automatic sensor discovery. After the sensor is detected for the first time, this field will be filled with the sensor's ID. For ANT devices, this will be the device's ANT ID. For BLE devices, this will be an automatically generated ID starting from 1 (due to security policy restrictions); it is stored in the app's memory and does not change over time. You can enter any text in this field after the space. Supported formats:
 
 - `12345 HRM 600` - ANT+ sensor ID with custom name
 - `1 COROS HR` - BLE sensor ID with custom name
@@ -80,33 +82,42 @@ A FIT file can store data from 8 to 16 sensors, depending on the data size.
 ![](assets/charts1.png)
 ![](assets/charts2.png)
 ![](assets/charts3.png)
+![](assets/distance.png)
 
 ## Garmin Devices
 
 This DataField supports every Garmin model that can ever be supported. Currently, it is being adapted for 307 models. However, some features may not be available on older devices.
 
+### Garmin epix
+
+The first watch with app support on **CIQ 1.2**. They do not support saving data to a FIT file.
+
 ### Older models with limited memory
 
-For example, the [Fenix 3](https://developer.garmin.com/connect-iq/device-reference/fenix3/) with CIQ 1.4 and **16 KB of memory**. There's no mistake here - it's only 16,384 bytes of memory, and the application's source code alone (without settings) takes up more than 10 KB.
+For example, the [Fenix 3](https://developer.garmin.com/connect-iq/device-reference/fenix3/) with **CIQ 1.4** and **16 KB of memory**. There's no mistake here - it's only 16,384 bytes of memory, and the application's source code alone (without settings) takes up more than 10 KB.
 
-In such devices, the number of sensors is limited to four. Sensors labeled "Sensor 1 to 4" are saved to the FIT file but do not appear in Garmin Connect.
+In such devices, the number of sensors is limited to four. All sensors will be labeled "Sensor" from 1 to 4 without units due to memory limitations.
 
 ### Older models without BLE
 
-For example, the [Fenix 5](https://developer.garmin.com/connect-iq/compatible-devices/) with CIQ 3.1.
+For example, the [Fenix 5](https://developer.garmin.com/connect-iq/compatible-devices/) with **CIQ 3.1**. Only ANT sensors can be connected to them. The number is limited only by the device's capabilities.
 
-Only ANT sensors can be connected to them. The number is limited only by the device's capabilities.
+### First models with BLE
+
+These are several devices running **CIQ 3.1**. The feature for connecting to a BLE sensor via its MAC address is not available.
 
 ### Modern models
 
-Almost all devices running CIQ 3.2 or later. Most support both ANT and BLE sensors.
-
-On the first models with BLE support and CIQ version 3.1, the feature for connecting to a BLE sensor via its MAC address is not available.
+Almost all devices running **CIQ 3.2** or later. Most support both ANT and BLE sensors and do not have functional limitations.
 
 ## TIPS
 
 If your sensor supports both ANT and BLE, you can connect it directly to the watch using one protocol and to this DataField using the other protocol.
 
+Modern Garmin straps supports **Running Speed and Distance** feature. And they support both ANT and BLE. However, in BLE mode, distance information is not transmitted.
+
 If you have a **Garmin HRM 600** strap, you can pair it with your watch via secure BLE to enable the **Step Speed Loss** metric, then switch the sensor to open connection mode (three LED flashes) and connect it to this DataField via the ANT+ protocol.
+
+If you connect to **Stryd** using only ANT and not BLE, it will fall asleep more often at a slow pace.
 
 You can use the **Broadcast Heart Rate** feature to receive data from additional Garmin watches and compare their metrics.
