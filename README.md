@@ -34,6 +34,9 @@ Any sensor that you connect directly to the watch will be considered the primary
 
 ![](assets/settings.png)
 
+> [!IMPORTANT]
+> If your settings don't save after installing the app, uninstall the app and install it again. This is a known Garmin bug and can happen with any Connect IQ app.
+
 The settings can be changed in the Garmin Connect IQ mobile app.
 
 **Type** - only ANT sensors for older devices, and both ANT and BLE for modern devices (check **Generic Bluetooth Low Energy Channel** feature [here](https://developer.garmin.com/connect-iq/compatible-devices/)).
