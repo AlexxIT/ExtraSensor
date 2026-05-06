@@ -20,6 +20,8 @@ Tested devices:
 - Garmin fēnix® 8 (ANT+ and BLE)
 - Garmin HRM-Pro Plus (ANT+ and BLE)
 - Garmin HRM 600 (ANT+ and BLE)
+- Polar H10 (ANT+ and BLE)
+- Polar OH1 (ANT+ and BLE)
 - COROS Hear Rate Monitor (BLE)
 - Mio Link Heart Rate (ANT+ and BLE)
 - Stryd Power Meter (ANT+ and BLE)
