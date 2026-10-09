@@ -25,6 +25,7 @@ Tested devices:
 - COROS Hear Rate Monitor (BLE)
 - Mio Link Heart Rate (ANT+ and BLE)
 - Stryd Power Meter (ANT+ and BLE)
+- Tymewear Heart Rate (ANT+ and BLE)
 
 ## Important
 
