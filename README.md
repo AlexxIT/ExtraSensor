@@ -92,7 +92,7 @@ A FIT file can store data from 8 to 16 sensors, depending on the data size.
 
 ## Garmin Devices
 
-This DataField supports every Garmin model that can ever be supported. Currently, it is being adapted for 307 models. However, some features may not be available on older devices.
+This DataField supports every Garmin model that can ever be supported. Currently, it is being adapted for 322 models. However, some features may not be available on older devices.
 
 ### Garmin epix
 
